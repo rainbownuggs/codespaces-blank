@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        #message {
+          font-size: 24px;
+          text-align: center;
+          margin-top: 50px;
+        }
+        #buttons {
+          display: flex;
+          justify-content: center;
+          margin-top: 30px;
+        }
+        .button {
+          background-color: #ccc;
+          color: #000;
+          border: none;
+          border-radius: 5px;
+          font-size: 18px;
+          padding: 10px 20px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+        .no {
+          position: absolute;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div id="message">
+        Can you be my girlfriend?
+    </div>
+    <div id="buttons">
+        <button class="button no">No</button>
+        <button class="button yes">Yes</button>
+    </div>
+    <script>
+        const mdiv = document.getElementById('message');
+        const nbtn =document.querySelector('.no');
+        const ybtn = document.querySelector('.yes');
+
+        nbtn.addEventListener('clcik', ()=> {
+            const sw = window.innerWidth;
+            const sh = window.innerHeight;
+
+            const bw = nbtn.offsetwidth;
+            const bh = nbtn.offsetHeight;
+
+            const randx = Math.floor(Math.random() * (sw - bw));
+            const randy = Math.floor(Math.random() * (sh - bh));
+
+            nbtn.style.left = randx + 'px';
+            nbtn.style.top = randy + 'px';
+
+        });
+        
+        ybtn.addEventListener('clcik', ()=> {
+            mdiv.textContent = "Yes I Love You!";
+
+        });
+    </script>
+</body>
+</html>
